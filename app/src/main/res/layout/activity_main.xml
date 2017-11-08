@@ -18,12 +18,96 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        android:layout_margin="8dp" />
+        android:layout_margin="8dp"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/enter_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
+        android:layout_margin="8dp"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/enter_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:layout_margin="8dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sex"
+        android:textSize="20sp"
         android:layout_margin="8dp"/>
+    
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/checkbox_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            android:paddingLeft="6dp"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/checkbox_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"
+            android:paddingLeft="6dp"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/checkbox_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:paddingLeft="6dp"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLEAR"
+            android:id="@+id/button"
+            android:onClick="onClear"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:onClick="onSubmit"
+            android:id="@+id/button2"
+            android:textSize="18sp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
 </LinearLayout>
