@@ -5,4 +5,14 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
+    <string name="questoin_one">Q 1 - How to get a response from an activity in Android?</string>
+    <string name="questoin_two">Q 2 - What are the layouts available in android?</string>
+    <string name="questoin_three">Q 3 -What are the functionalities of Binder services in android?</string>
+    <string name="questoin_four">Q 4 - How to upgrade SQlite the database from a lower version to higher version in android SQlite?</string>
+    <!--<string name="questoin_five"></string>-->
+    <!--<string name="questoin_six"></string>-->
+    <!--<string name="questoin_seven"></string>-->
+    <!--<string name="questoin_eight"></string>-->
+    <!--<string name="questoin_nine"></string>-->
+    <!--<string name="questoin_ten"></string>-->
 </resources>
