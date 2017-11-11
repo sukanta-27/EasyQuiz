@@ -1,39 +1,55 @@
 package com.example.android.easyquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
-
+    private Button button_12;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioGroup.clearCheck();
+//        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+//        radioGroup.clearCheck();
+//
+//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                RadioButton rb = (RadioButton) group.findViewById(checkedId);
+//                if (null != rb && checkedId > -1) {
+//                    //Toast.makeText(MainActivity.this, rb.getText(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        button_12 = (Button) findViewById(R.id.button2);
+        button_12.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton rb = (RadioButton) group.findViewById(checkedId);
-                if (null != rb && checkedId > -1) {
-                    //Toast.makeText(MainActivity.this, rb.getText(), Toast.LENGTH_SHORT).show();
-                }
+            public void onClick(View v) {
+                launchActivity();
             }
         });
 
     }
 
+    private void launchActivity(){
+        Intent intent = new Intent(this,QuizActivity.class);
+        startActivity(intent);
+    }
+
     public void onClear(View v) {
         /* Clears all selected radio buttons to default */
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
         radioGroup.clearCheck();
         EditText name = (EditText) findViewById(R.id.enter_name);
         name.setText("");
@@ -45,17 +61,12 @@ public class MainActivity extends AppCompatActivity {
         age.setText("");
     }
 
-    public void onSubmit(View v) {
-        RadioButton rb = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
-       // if (null != rb) {
-            //Toast.makeText(MainActivity.this, rb.getText(), Toast.LENGTH_SHORT).show();
-        Toast.makeText(MainActivity.this, rb.getText(), Toast.LENGTH_SHORT).show();
-       /* }
-        else{
-            rb.setError("Sex is required.");
-        }*/
-
-    }
+//    public void onSubmit(View v) {
+//
+//        Intent quiz_intent = new Intent(MainActivity.this, QuizClass.class);
+//        startActivity(quiz_intent);
+//
+//    }
 
 }
 
