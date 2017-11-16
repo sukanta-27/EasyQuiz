@@ -61,12 +61,5 @@ public class MainActivity extends AppCompatActivity {
         age.setText("");
     }
 
-//    public void onSubmit(View v) {
-//
-//        Intent quiz_intent = new Intent(MainActivity.this, QuizClass.class);
-//        startActivity(quiz_intent);
-//
-//    }
-
 }
 
