@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import static com.example.android.easyquiz.R.id.radioGroup;
 
@@ -13,7 +15,10 @@ import static com.example.android.easyquiz.R.id.radioGroup;
  */
 
     public class QuizActivity extends AppCompatActivity {
-        @Override
+
+    public int score;
+    char[] answers = new char[4];
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_quiz);
@@ -38,6 +43,56 @@ import static com.example.android.easyquiz.R.id.radioGroup;
 
             RadioGroup radioGroup_four = (RadioGroup) findViewById(R.id.group_four);
             radioGroup_four.clearCheck();
-        }
     }
+
+    /*
+    * This method takes all the selected radioButtons and check if they are the right answer or wrong, calculates the score and
+    * shows it as a Toast. AS of Now.
+    *
+    * @param View*/
+
+    public void submitQuiz(View view){
+        score = 0;
+
+        RadioGroup radioGroup_one = (RadioGroup) findViewById(R.id.group_one);
+        RadioGroup radioGroup_two = (RadioGroup) findViewById(R.id.group_two);
+        RadioGroup radioGroup_three = (RadioGroup) findViewById(R.id.group_three);
+        RadioGroup radioGroup_four = (RadioGroup) findViewById(R.id.group_four);
+
+        int selectedID_one = radioGroup_one.getCheckedRadioButtonId();
+        RadioButton radioButton_one = (RadioButton) findViewById(selectedID_one);
+
+        int selectedID_two = radioGroup_two.getCheckedRadioButtonId();
+        RadioButton radioButton_two = (RadioButton) findViewById(selectedID_two);
+
+        int selectedID_three = radioGroup_three.getCheckedRadioButtonId();
+        RadioButton radioButton_three = (RadioButton) findViewById(selectedID_three);
+
+        int selectedID_four = radioGroup_four.getCheckedRadioButtonId();
+        RadioButton radioButton_four = (RadioButton) findViewById(selectedID_four);
+
+        answers[0] = (radioButton_one.getText().toString()).charAt(0);
+        answers[1] = (radioButton_two.getText().toString()).charAt(0);
+        answers[2] = (radioButton_three.getText().toString()).charAt(0);
+        answers[3] = (radioButton_four.getText().toString()).charAt(0);
+
+        if(answers[0] == 'B'){
+            score += 1;
+        }
+
+        if(answers[1] == 'D'){
+            score += 1;
+        }
+
+        if(answers[2] == 'C'){
+            score += 1;
+        }
+
+        if(answers[3] == 'A'){
+            score += 1;
+        }
+
+        Toast.makeText(QuizActivity.this, String.valueOf(score), Toast.LENGTH_SHORT).show();
+    }
+}
 
