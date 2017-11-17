@@ -6,7 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import static com.example.android.easyquiz.R.string.email;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchActivity(){
         Intent intent = new Intent(this,QuizActivity.class);
+        String name = ((TextView) findViewById(R.id.enter_name)).getText().toString();
+        String Email = ((TextView) findViewById(R.id.enter_email)).getText().toString();
+        String Age = ((TextView) findViewById(R.id.enter_age)).getText().toString();
+
+        RadioGroup group = (((RadioGroup) findViewById(R.id.radioGroup)));
+        RadioButton sexButton = (RadioButton) findViewById((group.getCheckedRadioButtonId()));
+        String sex = sexButton.getText().toString();
+        intent.putExtra("name",name);
+        intent.putExtra("email",Email);
+        intent.putExtra("age",Age);
+        intent.putExtra("sex",sex);
+
         startActivity(intent);
     }
 
