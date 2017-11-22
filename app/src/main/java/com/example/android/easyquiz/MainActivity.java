@@ -21,19 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-//        radioGroup.clearCheck();
-//
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                RadioButton rb = (RadioButton) group.findViewById(checkedId);
-//                if (null != rb && checkedId > -1) {
-//                    //Toast.makeText(MainActivity.this, rb.getText(), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-
         button_12 = (Button) findViewById(R.id.button2);
         button_12.setOnClickListener(new View.OnClickListener() {
 
