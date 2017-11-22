@@ -48,17 +48,6 @@ import android.widget.RadioGroup;
             radioGroup_four.clearCheck();
     }
 
-    /*private String[] toEmailAddresses = new String[1];
-
-    public void setToEmailAddresses(String[] toEmailAddresses) {
-        this.toEmailAddresses = toEmailAddresses;
-    }
-
-    public String[] getToEmailAddresses() {
-        return toEmailAddresses;
-    }
-*/
-
     /*
     * Method to Compose mail.
     * @param toEmailAddresses : send to all these email Adresses
